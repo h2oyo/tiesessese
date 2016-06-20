@@ -102,7 +102,7 @@ public string Name
         return Name + "\n" +
             "Value:" + Value + "\n" +
             "Durability:" + CurDurablilty + "/" + MaxDurablilty + "\n"
-            + _defence + "\n";
+            + _defence + "\n" + _maxDamage + "\n" ;
     }
     public enum RarityTypes
     {

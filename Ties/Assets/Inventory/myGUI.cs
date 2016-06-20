@@ -114,7 +114,7 @@ public class myGUI : MonoBehaviour
             if (GUI.Button(new Rect(_offset * .5f + (buttonWidth * cnt), _offset, buttonWidth, buttonHeight), new GUIContent(chest.loot[cnt].Icon, chest.loot[cnt].ToolTip())))
             {
                 Debug.Log(chest.loot[cnt].ToolTip());
-                WarriorClass.Inventory.Add(chest.loot[cnt]);
+                PlayerClass.Inventory.Add(chest.loot[cnt]);
                 chest.loot.RemoveAt(cnt);
             }
         }
@@ -155,11 +155,11 @@ public class myGUI : MonoBehaviour
         {
             for (int x = 0; x < _inventoryCols; x++)
             {
-                if (cnt < WarriorClass.Inventory.Count)
+                if (cnt < PlayerClass.Inventory.Count)
                 {
-                    if (GUI.Button(new Rect(5 + (x * buttonWidth), 20 + (y * buttonHeight), buttonWidth, buttonHeight), new GUIContent(WarriorClass.Inventory[cnt].Icon, WarriorClass.Inventory[cnt].ToolTip())))
+                    if (GUI.Button(new Rect(5 + (x * buttonWidth), 20 + (y * buttonHeight), buttonWidth, buttonHeight), new GUIContent(PlayerClass.Inventory[cnt].Icon, PlayerClass.Inventory[cnt].ToolTip())))
                     {
-                        _selectedItem = WarriorClass.Inventory[4 * y + x];
+                        _selectedItem = PlayerClass.Inventory[4 * y + x];
 
                         // 0 is at 0,0 // 4 * 0 + 0 = 0
                         // 1 is at 1,0 // 4 * 0 + 1 = 1
@@ -173,20 +173,20 @@ public class myGUI : MonoBehaviour
                             if (Time.time - _doubleClickTimer < DOUBLE_CLICK_TIMER_THRESHHOLD)
                             {
 
-                                if (WarriorClass.EquipedChest == null)
+                                if (PlayerClass.EquipedChest == null)
                                 {
-                                    WarriorClass.EquipedChest = WarriorClass.Inventory[cnt];
-                                    WarriorClass.Inventory.RemoveAt(cnt);
+                                    PlayerClass.EquipedChest = PlayerClass.Inventory[cnt];
+                                    PlayerClass.Inventory.RemoveAt(cnt);
                                 }
                                 else
                                 {
 
-                                    if (WarriorClass.EquipedChest.itemtype == ItemType.Armors)
+                                    if (PlayerClass.EquipedChest.itemtype == ItemType.Armors)
                                     {
-                                        Item temp = WarriorClass.EquipedChest;
-                                        WarriorClass.EquipedChest = WarriorClass.Inventory[cnt];
+                                        Item temp = PlayerClass.EquipedChest;
+                                        PlayerClass.EquipedChest = PlayerClass.Inventory[cnt];
 
-                                        WarriorClass.Inventory[cnt] = temp;
+                                        PlayerClass.Inventory[cnt] = temp;
                                     }
                                 }
 
@@ -204,20 +204,20 @@ public class myGUI : MonoBehaviour
                             if (Time.time - _doubleClickTimer < DOUBLE_CLICK_TIMER_THRESHHOLD)
                             {
 
-                                if (WarriorClass.EquipedWeapon == null)
+                                if (PlayerClass.EquipedWeapon == null)
                                 {
-                                    WarriorClass.EquipedWeapon = WarriorClass.Inventory[cnt];
-                                    WarriorClass.Inventory.RemoveAt(cnt);
+                                    PlayerClass.EquipedWeapon = PlayerClass.Inventory[cnt];
+                                    PlayerClass.Inventory.RemoveAt(cnt);
                                 }
                                 else
                                 {
 
-                                    if (WarriorClass.EquipedWeapon.itemtype == ItemType.Weapon)
+                                    if (PlayerClass.EquipedWeapon.itemtype == ItemType.Weapon)
                                     {
-                                        Item temp = WarriorClass.EquipedWeapon;
-                                        WarriorClass.EquipedWeapon = WarriorClass.Inventory[cnt];
+                                        Item temp = PlayerClass.EquipedWeapon;
+                                        PlayerClass.EquipedWeapon = PlayerClass.Inventory[cnt];
 
-                                        WarriorClass.Inventory[cnt] = temp;
+                                        PlayerClass.Inventory[cnt] = temp;
                                     }
                                 }
 
@@ -283,16 +283,16 @@ public class myGUI : MonoBehaviour
     private void DisplayWeapon()
     {
         // Debug.Log("Displaying Equipment");
-        if (WarriorClass.EquipedWeapon == null)
+        if (PlayerClass.EquipedWeapon == null)
         {
             GUI.Label(new Rect(5, 100, 40, 40), "", "box");
         }
         else
         {
-            if (GUI.Button(new Rect(5, 100, 40, 50), new GUIContent(WarriorClass.EquipedWeapon.Icon, WarriorClass.EquipedWeapon.ToolTip())))
+            if (GUI.Button(new Rect(5, 100, 40, 50), new GUIContent(PlayerClass.EquipedWeapon.Icon, PlayerClass.EquipedWeapon.ToolTip())))
             {
-                WarriorClass.Inventory.Add(WarriorClass.EquipedWeapon);
-                WarriorClass.EquipedWeapon = null;
+                PlayerClass.Inventory.Add(PlayerClass.EquipedWeapon);
+                PlayerClass.EquipedWeapon = null;
             }
         }
         SetToolTip();
@@ -301,17 +301,17 @@ public class myGUI : MonoBehaviour
     {
 
 
-        if (WarriorClass.EquipedChest == null)
+        if (PlayerClass.EquipedChest == null)
         {
             GUI.Label(new Rect(5, 150, 40, 40), "", "box");
         }
         else
         { 
-                if (GUI.Button(new Rect(5, 150, 40, 50), new GUIContent(WarriorClass.EquipedChest.Icon, WarriorClass.EquipedChest.ToolTip())))
+                if (GUI.Button(new Rect(5, 150, 40, 50), new GUIContent(PlayerClass.EquipedChest.Icon, PlayerClass.EquipedChest.ToolTip())))
                 {
 
-                    WarriorClass.Inventory.Add(WarriorClass.EquipedChest);
-                    WarriorClass.EquipedChest = null;
+                PlayerClass.Inventory.Add(PlayerClass.EquipedChest);
+                PlayerClass.EquipedChest = null;
                 }
         }
         SetToolTip();

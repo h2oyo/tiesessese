@@ -53,13 +53,13 @@ public static class ItemGenenerator  {
 
 
 		if (Meleeweapon.Name == weaponNames [0]) {
-			Meleeweapon.DamageVariance = Random.Range(1, 10);
+			Meleeweapon.MaxDamage = Random.Range(1, 10);
 		}
 		if (Meleeweapon.Name == weaponNames [1]) {
-			Meleeweapon.MaxDamage = Random.Range(5, 10);
+			Meleeweapon.MaxDamage = Random.Range(1, 3);
 		}
 		if (Meleeweapon.Name == weaponNames [2]) {
-			Meleeweapon.MaxDamage = Random.Range(5, 10);
+			Meleeweapon.MaxDamage = Random.Range(3, 6);
 		}
 
        
@@ -87,7 +87,7 @@ public static class ItemGenenerator  {
 
         ArmorNames[0] = "Cloth";
         ArmorNames[1] = "Chain";
-        ArmorNames[2] = "Metal";
+        ArmorNames[2] = "Golden";
 
         Armor.Name = ArmorNames[Random.Range(0, ArmorNames.Length)];
         if(Armor.Name == ArmorNames[0])

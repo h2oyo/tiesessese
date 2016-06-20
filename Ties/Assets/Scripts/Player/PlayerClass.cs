@@ -63,8 +63,10 @@ public class PlayerClass : MonoBehaviour {
     public bool FireMenu;
     public bool IceMenu;
 
-    public bool MageSelected;
-    public bool WarriorSelected;
+    [SerializeField]
+    public static bool MageSelected;
+    [SerializeField]
+    public static bool WarriorSelected;
 
 
 
@@ -78,25 +80,26 @@ public class PlayerClass : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        fireBallLevel = 1;
         if (MageSelected == true)
         {
             
         
 
-            str = 4;
+            str = 20;
             dex = 5;
             vit = 7;
             mag = 14;
             StatsMenu = false;
             SkillMenu = false;
 			WeaponDamage = EquipedWeapon.MaxDamage;
-
+            damageReduction = 0;
 
             fireballActive = false;
             IceBallActive = false;
 
 
-    fireBallLevel = 1;
+            fireBallLevel = 1;
             IceMenu = false;
             FireMenu = false;
 }
@@ -235,8 +238,7 @@ public class PlayerClass : MonoBehaviour {
 
 
         }
-        else
-        { damageReduction = tempDef; }
+      
     }
     //----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -501,7 +503,7 @@ public class PlayerClass : MonoBehaviour {
             {
                 if (IceBallLevel >= 1)
                 {
-                    fireballActive = false;;
+                    fireballActive = false;
                     IceBallActive = true;
                 }
                 if (skillpoints > 0)
