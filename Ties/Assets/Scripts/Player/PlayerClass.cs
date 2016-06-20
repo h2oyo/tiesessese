@@ -86,7 +86,7 @@ public class PlayerClass : MonoBehaviour {
             
         
 
-            str = 20;
+            str = 4;
             dex = 5;
             vit = 7;
             mag = 14;
@@ -98,7 +98,7 @@ public class PlayerClass : MonoBehaviour {
             fireballActive = false;
             IceBallActive = false;
 
-
+            healthpots = 5;
             fireBallLevel = 1;
             IceMenu = false;
             FireMenu = false;
@@ -249,27 +249,27 @@ public class PlayerClass : MonoBehaviour {
         if (fireBallLevel == 1)
         {
             FireBallDam = 15;
-            manaSpent += 5;
+            manaSpent += 1;
         }
         if (fireBallLevel == 2)
         {
             FireBallDam = 25;
-            manaSpent += 10;
+            manaSpent += 1;
         }
         if (fireBallLevel == 3)
         {
             FireBallDam = 30;
-            manaSpent += 11;
+            manaSpent += 1;
         }
         if (fireBallLevel == 4)
         {
             FireBallDam = 35;
-            manaSpent += 12;
+            manaSpent += 1;
         }
         if (fireBallLevel == 5)
         {
             FireBallDam = 50;
-            manaSpent += 13;
+            manaSpent += 1;
         }
         Debug.Log("I CASTED THE BALLS OF FIRE");
     }
@@ -278,27 +278,27 @@ public class PlayerClass : MonoBehaviour {
         if (IceBallLevel == 1)
         {
             IceBallDam = 10;
-            manaSpent += 5;
+            manaSpent += 1;
         }
         if (IceBallLevel == 2)
         {
             IceBallDam = 15;
-            manaSpent += 10;
+            manaSpent += 1;
         }
         if (IceBallLevel == 3)
         {
             IceBallDam = 22;
-            manaSpent += 11;
+            manaSpent += 1;
         }
         if (IceBallLevel == 4)
         {
             IceBallDam = 30;
-            manaSpent += 12;
+            manaSpent += 1;
         }
         if (IceBallLevel == 5)
         {
             IceBallDam = 44;
-            manaSpent += 13;
+            manaSpent += 1;
         }
         Debug.Log("I CASTED THE BALLS OF ICE");
     }

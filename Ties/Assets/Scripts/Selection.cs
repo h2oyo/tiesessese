@@ -36,6 +36,6 @@ public class Selection : MonoBehaviour {
     {
         //some how load game with warrior settings
         PlayerClass.WarriorSelected = true;
-        SceneManager.LoadScene("WarriorScene");
+        SceneManager.LoadScene("thingsthesecond");
     }
 }

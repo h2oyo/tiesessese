@@ -8,7 +8,7 @@ public class myGUI : MonoBehaviour
     // WarriorClass Warrior;
 
     public float lootWindowHeight = 90;
-
+    public PlayerClass player;
     public float buttonWidth = 40;
     public float buttonHeight = 40;
     public float closeButtonWidth = 20;
@@ -319,6 +319,8 @@ public class myGUI : MonoBehaviour
     }
     private void DisplayAttribues()
     {
+        GUI.Label(new Rect(5, 100, 40, 40), PlayerClass.EquipedWeapon.MaxDamage.ToString(), "box");
+        GUI.Label(new Rect(5, 150, 40, 40), PlayerClass.EquipedChest.Defence.ToString(), "box");
         // Debug.Log("Displaying Attributes");
         //if (GUI.Button(new Rect(450, 200, 200, 50), "Stregth:" + Warrior.str))
         //{
